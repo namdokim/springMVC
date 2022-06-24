@@ -23,7 +23,11 @@ public class UserServiceImple implements UserService {
 		
 		return userDao.selectlogin(vo);
 	}
-	
-	
+
+	@Override
+	public int idcheck(String id) {
+		
+		return userDao.idcheck(id);
+	}
 	
 }

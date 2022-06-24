@@ -37,6 +37,14 @@
 		AND		password = #{password}	
 
 	</select>
+	
+	<select id="idcheck" parameterType="String" resultType="int">
+		SELECT COUNT(id)
+		FROM springmvc
+		WHERE id = #{id}
+	
+	</select>
+	
 
 
 </mapper>

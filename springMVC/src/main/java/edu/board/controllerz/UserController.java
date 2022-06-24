@@ -1,5 +1,8 @@
 package edu.board.controllerz;
 
+import java.io.Console;
+import java.net.Authenticator.RequestorType;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import edu.board.Dao.UserDAO;
 import edu.board.service.UserService;
 import edu.board.vo.UserVO;
 
@@ -61,9 +66,16 @@ public class UserController {
 		}else {
 			System.out.println("½ÇÆÐ");
 			return "redirect:/";
-	}
+		}
 	
 	}
-	
-	
+
+	@ResponseBody
+	@RequestMapping(value = "user/idcheck.do", method = RequestMethod.POST)
+	public String idcheck(String id) {
+		
+		return userService.idcheck(id)+"";
+		
+	}
+
 }

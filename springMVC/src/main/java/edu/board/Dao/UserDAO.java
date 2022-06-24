@@ -25,5 +25,12 @@ public class UserDAO {
 		
 		return sqlSession.selectOne("edu.board.mapper.userMapper.selectlogin",vo );
 	}
+	
+	public int idcheck(String id) {
+		
+		return sqlSession.selectOne("edu.board.mapper.userMapper.idcheck", id);
+		
+	
+	}
 
 }

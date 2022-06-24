@@ -5,4 +5,5 @@ import edu.board.vo.UserVO;
 public interface UserService {
 	int insertuser(UserVO vo);
 	UserVO selectlogin(UserVO vo); 
+	int idcheck(String id);
 }
